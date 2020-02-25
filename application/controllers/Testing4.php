@@ -35,13 +35,103 @@ class Testing4 extends CI_Controller
         //$this->unit->run($output,$expect,$test_name);
         $this->unit->run($true,$expected,$test_name);
 
-        $test_name = 'tes if else';
-        $this->unit->run($this->ifelse('tes','halo'),'tes',$test_name);
+        $test_name = 'tes if else1';
+        $this->unit->run($this->ifelse(null,null),'Something wrong. Please contact US',$test_name);
+        
+        $test_name = 'tes if else1_2';
+        $this->unit->run($this->ifelse('aryawan',null),'aryawan',$test_name);
 
-        $test_name = 'tes loop 2';
+        $test_name = 'tes if else1_3';
+        $this->unit->run($this->ifelse(null,'aryawan'),'aryawan',$test_name);
+
+        $test_name = 'tes if else1_4';
+        $this->unit->run($this->ifelse('aryawan','wijaya'),'aryawan',$test_name);
+
+        $test_name = 'tes if else1_5';
+        $this->unit->run($this->ifelse('aryawan'),'aryawan',$test_name);
+
+
+        $test_name ='tes if else 2_1';
+        $this->unit->run($this->ifelse2('andi'),'dia adalah teman saya',$test_name);
+
+        $test_name ='tes if else 2_2';
+        $this->unit->run($this->ifelse2('babi'),'dia bukan teman saya',$test_name);
+
+        // $test_name ='tes if else 2_3';
+        // $this->unit->run($this->ifelse2(),'dia bukan teman saya',$test_name);
+
+        $test_name ='tes if else 3_1';
+        $this->unit->run($this->ifelse3(null,null,null),'Something wrong. Please contact US',$test_name);
+
+        $test_name ='tes if else 3_2';
+        $this->unit->run($this->ifelse3(null,null,'wijaya'),'wijaya',$test_name);
+
+        $test_name ='tes if else 3_3';
+        $this->unit->run($this->ifelse3('aryawan',null,null),'aryawan',$test_name);
+
+        $test_name ='tes if else 3_4';
+        $this->unit->run($this->ifelse3(null,'ravato',null),'ravato',$test_name);
+
+        $test_name ='tes if else 3_5';
+        $this->unit->run($this->ifelse3('aryawan','ravato','wijaya'),'aryawan',$test_name);
+
+        $test_name ='tes if else 3_6';
+        $this->unit->run($this->ifelse3(null,'ravato','wijaya'),'ravato',$test_name);
+
+        $test_name ='tes if else 3_7';
+        $this->unit->run($this->ifelse3('aryawan',null,'wijaya'),'aryawan',$test_name);
+
+        $test_name ='tes if else 3_8';
+        $this->unit->run($this->ifelse3('aryawan','ravato',null),'aryawan',$test_name);
+
+        // $test_name ='tes if else 3_9';
+        // $this->unit->run($this->ifelse3('aaa'),'aaa',$test_name);
+
+        $test_name ='tes if else 4_1';
+        $this->unit->run($this->ifelse4('D'),'Have a nice Tuesday!',$test_name);
+
+        $test_name ='tes if else 4_2';
+        $this->unit->run($this->ifelse4(),'Have a nice Tuesday!',$test_name);
+
+        $test_name ='tes if else 4_3';
+        $this->unit->run($this->ifelse4('d'),'',$test_name);
+
+        $test_name ='tes if else 4_4';
+        $this->unit->run($this->ifelse4('TUE'),'',$test_name);
+
+        $test_name ='tes if else 4_5';
+        $this->unit->run($this->ifelse4(null),'',$test_name);
+
+        $test_name ='tes loop 1';
+        $this->unit->run($this->loop1(1),2048,$test_name);
+
+        $test_name ='tes loop 1_2';
+        $this->unit->run($this->loop1(null),null,$test_name);
+
+        $test_name = 'tes loop 2_1';
         $arr = array(0,1,2,3,4);
         $this->unit->run($this->loop2($arr),4,$test_name);
 
+        $test_name = 'tes loop 2_2';
+        $arr =array(null);
+        $this->unit->run($this->loop2($arr),0,$test_name);
+
+        $test_name = 'tes loop 2_3';
+        $arr = array(1,1,1,1,1);
+        $this->unit->run($this->loop2($arr),3,$test_name);
+
+        $test_name = 'tes loop 2_4';
+        $arr = array();
+        $this->unit->run($this->loop2($arr),0,$test_name);
+
+        // $test_name = 'tes loop 2_5';
+        // $this->unit->run($this->loop2(),0,$test_name);
+
+        $test_name = 'tes loop 4';
+        $this->unit->run($this->loop3(1),2048,$test_name);
+
+        $test_name = 'tes loop 4_1';
+        $this->unit->run($this->loop3(null),0,$test_name);
         echo $this->unit->report();
     }
 
