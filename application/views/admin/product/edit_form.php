@@ -76,6 +76,15 @@
 								</div>
 							</div>
 
+							<div class="form-group">
+								<label for="name">Description*</label>
+								 <input class="form-control <?php echo form_error('expiredDate') ? 'is-invalid':'' ?>"
+								 type="date" name="expiredDate" value="<?php echo $product->expiredDate ?>"/>
+								<div class="invalid-feedback">
+									<?php echo form_error('description') ?>
+								</div>
+							</div>
+
 							<input class="btn btn-success" type="submit" name="btn" value="Save" />
 						</form>
 
